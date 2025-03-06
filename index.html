@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Your Favorite Hero</title>
+  </head>
+
+  <body>
+    <div class="header-container">
+      <h1>Your favorite Hero</h1>
+
+      <p>
+        Every one in life needs, has or had an inspiration. The actions of
+        someone will caught our atention and that person, fictional or non
+        fictional, will have an impact on us.
+      </p>
+
+      <p>
+        The following form with allow you put info on the person or character
+        you like the most. Don't be shy and let us know your favorite hero.
+      </p>
+    </div>
+
+    <div class="rules-container">
+      <h2>General Rules</h2>
+
+      <div class="list-container">
+        <li>
+          Ideally, any kind of character is allowed.
+          <strong>HOWEVER</strong> real people that had done horrible acts are
+          not allowed by any means
+        </li>
+        <li>
+          If possible, the character/person should have a photo or a link that
+          redirects to the photo
+        </li>
+        <li>
+          Use the form in a logical way. Even though this has validations, I
+          will not verify each input on the most exhaustive way
+        </li>
+      </div>
+    </div>
+
+    <div class="flex content-center items-center mt-20 place-self-center">
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="username"
+          >
+            Username
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="username"
+            type="text"
+            placeholder="Username"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="password"
+            type="password"
+            placeholder="******************"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+

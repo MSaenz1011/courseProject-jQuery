@@ -1,48 +1,114 @@
-html,body{
-    margin: 0px;
-    padding: 0px;
+html, body {
+    margin: 0;
+    padding: 0;
     max-width: 100%;
     overflow-x: hidden;
 }
 
+/* Header */
+.header-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: lightblue;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
 
-/*CSS for the header*/
-.header-container{
+.header-container {
     display: flex; 
-   align-items: center;
-   justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     background-color: lightblue;
     padding: 20px 20px; 
     margin-top: 0px;
     margin-bottom: 50px;
-    
+}
+
+.header-container div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
-/*CSS for the index page*/
-
-.info-container{
+.info-container {
     text-align: center;
+    padding: 0 20px;
 }
 
 
-
-.rules-container{
+.rules-container {
     display: flex;
     flex-direction: row;
-    justify-content:space-around ;
+    justify-content: space-around;
     margin-top: 100px;
+    flex-wrap: wrap; 
+    gap: 20px;
+    padding: 0 20px;
 }
 
-.rules-container h2{
-    margin-top: 50px;
-    
+.card-rules,
+.list-container {
+    width: 40%;
+    min-width: 300px; /* So it doesn't get too narrow */
+    height: auto;
+    text-align: center;
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.list-container{
-   max-width: 400px;
-   text-align: justify;
+.card-rules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-rules h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0b132b;
+    text-shadow: 2px 2px 4px #6fffe9;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #1a1a2e;
+    margin: 0;
 }
 
 
+section.flex.justify-around img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
+
+@media (max-width: 1024px) {
+    section.flex.justify-around {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    section.flex.justify-around > div {
+        width: 90%;
+    }
+}

@@ -7,49 +7,75 @@
     <title>Your Favorite Hero</title>
   </head>
 
-  <body>
-    <div class="header-container">
-      <h1 class="text-5xl font-bold">Favorite Hero</h1>
-
-      <div>
-        <a href="index.html">Home</a>
-        <a href="character.html">Examples</a>
-        <a href="form.html">Submit</a>
-      </div>
+  <nav class="header-container flex flex-wrap items-center justify-between w-full">
+    <h1 class="text-5xl font-bold text-blue-900">Favorite Hero</h1>
+  
+    <div class="flex flex-col gap-4 mt-4 sm:mt-0 sm:flex-row">
+      <a
+        href="index.html"
+        class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition"
+      >Home</a>
+      <a
+        href="character.html"
+        class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition"
+      >Examples</a>
+      <a
+        href="form.html"
+        class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition"
+      >Submit</a>
     </div>
+  </nav>
 
     <div class="info-container">
-      <p class="mt-10">
+      <p class="mt-10 text-black-900 font-bold text-2xl">
         A form to fill some basic information of your favorite character or one
         of your favorite characters.
       </p>
-      <p class="mt-15">You can add the following:</p>
-
+      <p class="mt-15 text-black-900 font-bold text-2xl">
+        You can add the following:
+      </p>
     </div>
 
-    <div class="rules-container">
-      <h2>General Rules</h2>
-
-      <div class="list-container">
-        <li>Only put fictional characters.</li>
-        <li>
-          If possible, the character should have a photo or a link that
-          redirects to the photo.
-        </li>
-        <li>
-          Use the form in a logical way. Even though this has validations, I
-          will not verify each input on the most exhaustive way.
-        </li>
+    <section class="flex justify-around mt-10 text-center">
+      <div class="bg-sky-200 p-5 w-md rounded-lg">
+        <h2 class="text-2xl font-bold text-decoration-line: underline">Heroes</h2>
+        <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2017/04/Optimus-G1-series-Transformers.jpg" alt="" class="my-5 h-48 w-96"/>
+        <p class="text-xl font-semibold">The most common representation of the good guys</p>
       </div>
-    </div>
+      <div class="bg-red-500 p-5 w-md rounded-lg">
+        <h2 class="text-2xl font-bold text-decoration-line: underline">Villians </h2>
+        <img src="https://i.ytimg.com/vi/LS3FX94lBTY/maxresdefault.jpg" alt=""  class="my-5 h-48 w-96"/>
+        <p class="text-xl font-semibold"> Even the bad guys deserve some love</p>
+      </div>
 
-    
+      <div class="bg-amber-200 p-5 w-md rounded-lg">
+        <h2 class="text-2xl font-bold text-decoration-line: underline">Or whatever you want</h2>
+        <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/12/witcher-3-unseen-elder-1.jpg" alt="" class="my-5 h-48 w-96" />
+        <p class="text-xl font-semibold">Not all characters fit into good or bad</p>
+      </div>
+    </section>
 
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.js"
-      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-      crossorigin="anonymous"
-    ></script>
+    <section class="rules-container mb-10">
+      <div class="card-rules">
+        <h2>General Rules Before Heading To The Form</h2>
+      </div>
+
+      <div class="list-container p-6">
+        <ul class="space-y-6">
+          <li class="text-gray-900 font-bold text-xl">
+            Only put fictional characters.
+          </li>
+          <li class="text-gray-900 font-bold text-xl">
+            If possible, the character should have a photo or a link that
+            redirects to the photo.
+          </li>
+          <li class="text-gray-900 font-bold text-xl">
+            Use the form in a logical way. Even though this has validations, I
+            will not verify each input in the most exhaustive way.
+          </li>
+        </ul>
+      </div>
+    </section>
     <script src="app.js"></script>
   </body>
 </html>

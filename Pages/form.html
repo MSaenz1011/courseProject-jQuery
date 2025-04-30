@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
     <title>Submit your character</title>
   </head>
 
@@ -33,11 +33,12 @@
     </nav>
 
     <div class="flex justify-center items-center">
-      <h2 class="italic text-black-900 font-bold text-7xl">The form</h2>
+      <h2 class="italic text-black-900 font-bold text-6xl">The form</h2>
     </div>
 
     <section class="flex justify-center items-center mt-20">
       <form
+        id="commonForm"
         class="w-full max-w-lg mx-auto p-6 rounded-xl shadow-lg bg-gradient-to-br from-blue-100 to-blue-300"
       >
         <div class="mb-5">
@@ -47,35 +48,36 @@
             >Name of the character</label
           >
           <input
-            type="characterName"
             id="characterName"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Example: Optimus Prime"
           />
+          <span class="first-one"> </span>
         </div>
         <div class="mb-5">
           <label
             for="characterUniverse"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >First appereance</label
+            >First appereance (or universe it belongs to)</label
           >
           <input
-            type="characterUniverse"
             id="characterUniverse"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
+          <span class="second-one"> </span>
         </div>
         <div class="mb-5">
           <label
             for="characterDescription"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Explain why do you like this character?</label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mb-1"
+            >Explain why do you like this character</label
           >
           <textarea
             id="characterDescription"
             rows="4"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="block p-2.5 w-full mb-1 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           ></textarea>
+          <span class="third-one"> </span>
         </div>
         <div class="mb-5">
           <label
@@ -84,10 +86,10 @@
             >Provide a picture (must be an URL)</label
           >
           <input
-            type="characterPicture"
             id="characterPicture"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
+          <span class="fourth-one"> </span>
         </div>
         <div class="flex mt-8 justify-center">
           <button
@@ -105,6 +107,6 @@
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
       crossorigin="anonymous"
     ></script>
-    <script src="app.js"></script>
+    <script src="../app.js"></script>
   </body>
 </html>

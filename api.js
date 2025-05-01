@@ -6,7 +6,7 @@ $(document).ready(() => {
 
   function apicaller() {
     let id = Math.floor(Math.random() * 731) + 1; 
-    let url = `https://superheroapi.com/api/${key}/${id}`; 
+    let url = `https://superheroapi.com/api.php/${key}/${id}`; 
 
     $.ajax({
       url: corsProxy + url,

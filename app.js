@@ -3,16 +3,12 @@ $(document).ready(() => {
   let characterUniverse;
   let characterDescription;
   let characterPicture;
-  const imageRegex = /\.(jpeg|jpg|gif|png|webp|bmp|svg)(\?.*)?$/i; //Thanks... Old Stackoverflow
+  const imageUrlRegex =
+    /^https?:\/\/[^?#]+\.(jpg|jpeg|png|gif|webp|bmp|svg)(\?.*)?$/i;
 
   $("button").click((e) => {
     e.preventDefault();
     checker();
-    $("#characterName").val("");
-    $("#characterUniverse").val("");
-    $("#characterDescription").val("");
-    $("#characterPicture").val("");
-    alert("click");
   });
 
   function checker() {
@@ -32,7 +28,6 @@ $(document).ready(() => {
         .addClass("text-sm text-red-600 dark:text-red-500 font-medium ")
         .text("Enter a name");
       error = false;
-      return;
     }
 
     if (characterUniverse.trim() === "") {
@@ -40,7 +35,6 @@ $(document).ready(() => {
         .addClass("text-sm text-red-600 dark:text-red-500 font-medium ")
         .text("Enter the first apperance of the character or its universe");
       error = false;
-      return;
     }
 
     if (
@@ -51,19 +45,58 @@ $(document).ready(() => {
         .addClass("text-sm text-red-600 dark:text-red-500 font-medium ")
         .text("Provide more info on this, it is your favorite character");
       error = false;
-      return;
-    } else if (characterDescription.length > 70) {
+    } else if (characterDescription.length > 150) {
       $(".third-one")
         .addClass("text-sm text-red-600 dark:text-red-500 font-medium ")
-        .text("We get it, be more precise");
+        .text("We get it, be more precise next time");
     }
 
-    if (!imageRegex.test(characterPicture) || characterPicture.trim() === "") {
+    if (
+      !imageUrlRegex.test(characterPicture) ||
+      characterPicture.trim() === ""
+    ) {
       $(".fourth-one")
         .addClass("text-sm text-red-600 dark:text-red-500 font-medium ")
         .text("Not a valid url or not a real url");
       error = false;
-      return;
+    }
+
+    petionApi(error);
+  }
+
+  function petionApi(error) {
+    if (error === false) {
+      console.log("Fill the data....");
+    } else {
+      $.ajax({
+        url: "http://localhost:3000/api/characters",
+        method: "POST",
+        contentType: "application/json",
+        processData: false,
+        data: JSON.stringify({
+          name: characterName,
+          universe: characterUniverse,
+          description: characterDescription,
+          image: characterPicture,
+        }),
+        success: function (response) {
+          console.log("Character added:", response);
+        },
+        error: function (err) {
+          console.error("Error saving character:", err);
+        },
+      });
+      Swal.fire({
+        title: "Submitted",
+        text: "Character added",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+
+      $("#characterName").val("");
+      $("#characterUniverse").val("");
+      $("#characterDescription").val("");
+      $("#characterPicture").val("");
     }
   }
 });
